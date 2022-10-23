@@ -27,16 +27,16 @@ class routine_result(models.Model):
     modified_at = models.DateField(auto_now=True)
 
 class routine_day(models.Model):
-    datechoices = (('O','MON'),
-                   ('U','TUE'),
-                   ('E','WED'),
-                   ('H','THU'),
-                   ('R','FRI'),
-                   ('A','SAT'),
-                   ('U','SUN')
+    datechoices = (('MON','MON'),
+                   ('TUE','TUE'),
+                   ('WED','WED'),
+                   ('THU','THU'),
+                   ('FRI','FRI'),
+                   ('SAT','SAT'),
+                   ('SUN','SUN')
                    )
     datevar = [i[1] for i in datechoices]
-    day = models.CharField(max_length=1, choices=datechoices)
+    day = models.CharField(max_length=3, choices=datechoices)
     routine_id = models.ForeignKey(routine, on_delete=models.CASCADE)
     created_at = models.DateField(auto_now_add=True)
     modified_at = models.DateField(auto_now=True)

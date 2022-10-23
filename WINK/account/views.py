@@ -33,7 +33,7 @@ def loginUser(request):
 def logoutUser(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('/Routine/')
+        return redirect('/account/')
     else:
         return render(request, 'account/logout.html',{})
 
